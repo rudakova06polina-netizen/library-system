@@ -44,3 +44,12 @@
 - `BookController` — REST API
 - `DayCount` — столбец гистограммы, `DataSeeder` — тестовые данные
 - `static/` — веб-интерфейс (`index.html`, `style.css`, `app.js`)
+- 
+## Вывод
+<img width="1230" height="765" alt="image" src="https://github.com/user-attachments/assets/b5867a85-6a25-435f-b77a-396641af615d" />
+<img width="1228" height="387" alt="image" src="https://github.com/user-attachments/assets/e3514a86-df58-49e9-a697-c66901ecec9e" />
+<img width="1263" height="468" alt="image" src="https://github.com/user-attachments/assets/2d755d49-2818-4ae5-ade6-1e629d59d723" />
+
+
+
+
