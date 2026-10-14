@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Библиотека</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Информационная система «Библиотека»</h1>
+</header>
+
+<main>
+    <!-- Добавление / редактирование -->
+    <section class="card">
+        <h2 id="form-title">Добавить книгу</h2>
+        <form id="book-form" class="grid">
+            <label>Название*
+                <input id="b-title" required>
+            </label>
+            <label>Издатель
+                <input id="b-publisher">
+            </label>
+            <label>Дата выдачи*
+                <input id="b-issue" type="date" required>
+            </label>
+            <label>ФИО студента
+                <input id="b-student">
+            </label>
+            <label>Дата сдачи
+                <input id="b-return" type="date">
+            </label>
+            <div class="buttons">
+                <button type="submit" id="save-btn">Сохранить</button>
+                <button type="button" id="cancel-btn" class="secondary" hidden>Отмена</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Поиск и фильтр -->
+    <section class="card">
+        <h2>Поиск и фильтр</h2>
+        <form id="filter-form">
+            <fieldset>
+                <legend>Поиск по параметрам</legend>
+                <div class="grid">
+                    <label>ID <input id="f-id" type="number" min="1"></label>
+                    <label>Название <input id="f-title"></label>
+                    <label>Издатель <input id="f-publisher"></label>
+                    <label>Студент <input id="f-student"></label>
+                    <label>Книга сдана
+                        <select id="f-returned">
+                            <option value="">все</option>
+                            <option value="true">сдана</option>
+                            <option value="false">не сдана</option>
+                        </select>
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Фильтр по дате выдачи и сортировка</legend>
+                <div class="grid">
+                    <label>Выдана с <input id="f-from" type="date"></label>
+                    <label>Выдана по <input id="f-to" type="date"></label>
+                    <label>Порядок (дата выдачи + название)
+                        <select id="f-order">
+                            <option value="asc">по возрастанию</option>
+                            <option value="desc">по убыванию</option>
+                        </select>
+                    </label>
+                </div>
+            </fieldset>
+            <div class="buttons">
+                <button type="submit">Применить</button>
+                <button type="button" id="reset-btn" class="secondary">Сбросить</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Таблица -->
+    <section class="card">
+        <h2>Книги</h2>
+        <p class="counter">Книг в таблице: <strong id="counter">0</strong></p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Название</th>
+                    <th>Издатель</th>
+                    <th>Дата выдачи</th>
+                    <th>Студент</th>
+                    <th>Дата сдачи</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Гистограмма -->
+    <section class="card">
+        <h2>Выдачи книг по дням (последние 30 дней)</h2>
+        <canvas id="histogram" width="920" height="280"></canvas>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
